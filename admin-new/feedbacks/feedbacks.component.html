@@ -1,0 +1,74 @@
+<!-- <admin-nav></admin-nav>
+<div class="feedback">
+  <h3>Member Feedbacks</h3>
+<mat-card class="example-card">
+  <mat-card-content>
+    <table class="table table-hover">
+      
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Country</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th></th>
+      </thead>
+      
+      <tbody>
+        <tr *ngFor="let feedback of feedbackArray">
+          <td (click)="onEdit(patient)">{{ feedback.firstName }}</td>
+          <td (click)="onEdit(patient)">{{ feedback.lastName }}</td>
+          <td (click)="onEdit(patient)">{{ feedback.country["name"] }}</td>
+          <td (click)="onEdit(patient)">{{ feedback.email }}</td>
+          <td (click)="onEdit(patient)">{{ feedback.subject }}</td>
+        </tr>
+      </tbody>
+     
+    </table>
+  </mat-card-content>
+</mat-card>
+<mat-paginator #paginator [length]="dataSource.data.length" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+<angular2csv [data]="feedbackArray" filename="Report" [options]="options"></angular2csv>
+</div> -->
+<admin-nav></admin-nav>
+<div class="feedback">
+
+  <div class="mat-elevation-z8 data-table">
+    <table mat-table class="full-width-table" [dataSource]="datasource" matSort aria-label="Elements">
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+        <td mat-cell *matCellDef="let feedbacks ">{{ feedback.firstName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+        <td mat-cell *matCellDef="let feedbacks">{{ feedback.lastName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th>
+        <td mat-cell *matCellDef="let feedbacks ">{{feedback.country["name"]}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let feedbacks ">{{feedback.email}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Subject</th>
+        <td mat-cell *matCellDef="let feedbacks">{{ feedback.subject }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[25, 50, 100, 250]">
+    </mat-paginator>
+    <angular2csv [data]="feedbackArray" filename="Report" [options]="options"></angular2csv>
+
+  </div>
+
+</div>

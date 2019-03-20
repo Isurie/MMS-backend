@@ -1,0 +1,33 @@
+ /* Style inputs with type="text", select elements and textareas */
+
+
+/* Style the submit button with a specific background color etc */
+
+
+/* When moving the mouse over the submit button, add a darker green color */
+
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  /* padding: 20px; */
+  /* padding-top: 70px; */
+  width: 50%;
+} 
+
+.form-control.ng-touched.ng-invalid{
+  border: 2px solid red;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding-left: 75px;
+  padding-top: 75px;
+  padding-bottom: 30px;
+}
+
+.example-full-width {
+  width: 100% !important;
+}

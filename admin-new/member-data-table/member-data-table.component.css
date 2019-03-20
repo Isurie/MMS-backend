@@ -1,0 +1,28 @@
+.full-width-table {
+    width: 100%;
+  }
+  th{
+    font-size: 15px;
+  }
+  .btn {
+    /* border-color: #e44867;
+    color: cornsilk;
+    background-color: crimson; */
+    border-radius: 10px;
+  }
+
+.member-dt{
+  width: 100%;
+  padding-left: 250px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+/* .search-box{
+    padding-top: 500px;
+} */
+.form-group{
+  padding-left: 300px;
+  /* padding-bottom: 200px; */
+}
+
+
